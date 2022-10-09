@@ -2,7 +2,7 @@
 
 #define _USE_MATH_DEFINES
 
-#include <cmath>
+#include <math.h>
 #include <iostream>
 #include <string>
 
@@ -16,11 +16,11 @@ public:
 
 class circle : public figure {
 private:
-	const std::string name_ = "круг";
+	const std::string name_ = "ГЄГ°ГіГЈ";
 	double radius_ = 0;
 public:
 	circle() = default;
-	circle(double radius);//Конструктор
+	circle(double radius);//ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 	void setRadius(double rad);
 	double getRadius();
 	double getSquare() override;
@@ -29,7 +29,7 @@ public:
 };
 class rectangle : public figure {
 private:
-	const std::string name_ = "прямоугольник";
+	const std::string name_ = "ГЇГ°ГїГ¬Г®ГіГЈГ®Г«ГјГ­ГЁГЄ";
 	double width_ = 0.0;
 	double height_ = 0.0;
 public:
@@ -45,7 +45,7 @@ public:
 };
 class trapezoid : public figure {
 private:
-	const std::string name_ = "трапеция";
+	const std::string name_ = "ГІГ°Г ГЇГҐГ¶ГЁГї";
 	double large_base_ = 0.0;
 	double smaller_base_ = 0.0;
 	double right_side_ = 0.0;

@@ -1,3 +1,7 @@
+#define _USE_MATH_DEFINES
+
+#include <cmath>
+
 #include "class.h"
 
 circle::circle(double radius) :radius_(radius) {}

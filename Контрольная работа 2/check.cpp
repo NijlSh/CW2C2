@@ -21,14 +21,14 @@ int getBinChoice()
 		}
 		catch (std::exception&)
 		{
-			std::cout << "Áûëè ââåäåíû íåêîððåêòíûå äàííûå. Ïîâòîðèòå ââîä: ";
+			std::cout << "ÃÃ»Ã«Ã¨ Ã¢Ã¢Ã¥Ã¤Ã¥Ã­Ã» Ã­Ã¥ÃªÃ®Ã°Ã°Ã¥ÃªÃ²Ã­Ã»Ã¥ Ã¤Ã Ã­Ã­Ã»Ã¥. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤: ";
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
 		}
 		catch (int)
 		{
-			std::cout << "Òàêîãî ïóíêòà ìåíþ íåò. Ïîâòîðèòå ââîä: ";
+			std::cout << "Ã’Ã ÃªÃ®Ã£Ã® Ã¯Ã³Ã­ÃªÃ²Ã  Ã¬Ã¥Ã­Ã¾ Ã­Ã¥Ã². ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤: ";
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
@@ -50,14 +50,14 @@ int getFigureChoice()
 		}
 		catch (std::exception&)
 		{
-			std::cout << "Áûëè ââåäåíû íåêîððåêòíûå äàííûå. Ïîâòîðèòå ââîä: " << std::endl;
+			std::cout << "ÃÃ»Ã«Ã¨ Ã¢Ã¢Ã¥Ã¤Ã¥Ã­Ã» Ã­Ã¥ÃªÃ®Ã°Ã°Ã¥ÃªÃ²Ã­Ã»Ã¥ Ã¤Ã Ã­Ã­Ã»Ã¥. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤: " << std::endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
 		}
 		catch (int)
 		{
-			std::cout << "Òàêîãî ïóíêòà â ìåíþ íåò. Ïîâòîðèòå ââîä: " << std::endl;
+			std::cout << "Ã’Ã ÃªÃ®Ã£Ã® Ã¯Ã³Ã­ÃªÃ²Ã  Ã¢ Ã¬Ã¥Ã­Ã¾ Ã­Ã¥Ã². ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤: " << std::endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
@@ -75,7 +75,7 @@ int getLineI(std::ifstream& file)
     }
     catch (const std::exception&)
     {
-        std::cout << "Îøèáêà ïðè ÷òåíèè èíôîðìàöèè èç ôàéëà." << std::endl;
+        std::cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¯Ã°Ã¨ Ã·Ã²Ã¥Ã­Ã¨Ã¨ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¨ Ã¨Ã§ Ã´Ã Ã©Ã«Ã ." << std::endl;
         throw 1;
     }
     try
@@ -86,7 +86,7 @@ int getLineI(std::ifstream& file)
     }
     catch (int)
     {
-        std::cout << "Íå âåðíûé òèï äàííûõ." << std::endl;
+        std::cout << "ÃÃ¥ Ã¢Ã¥Ã°Ã­Ã»Ã© Ã²Ã¨Ã¯ Ã¤Ã Ã­Ã­Ã»Ãµ." << std::endl;
         throw 1;
     }
 }
@@ -101,7 +101,7 @@ double getLineD(std::ifstream& file)
     }
     catch (const std::exception&)
     {
-        std::cout << "Îøèáêà ïðè ÷òåíèè èíôîðìàöèè èç ôàéëà." << std::endl;
+        std::cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¯Ã°Ã¨ Ã·Ã²Ã¥Ã­Ã¨Ã¨ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¨ Ã¨Ã§ Ã´Ã Ã©Ã«Ã ." << std::endl;
         throw 1;
     }
     try
@@ -112,7 +112,7 @@ double getLineD(std::ifstream& file)
     }
     catch (int)
     {
-        std::cout << "Íåêîððåêòíûé ôîðìàò äàííûõ." << std::endl;
+        std::cout << "ÃÃ¥ÃªÃ®Ã°Ã°Ã¥ÃªÃ²Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã² Ã¤Ã Ã­Ã­Ã»Ãµ." << std::endl;
         throw 1;
     }
 }
@@ -120,22 +120,14 @@ double getLineD(std::ifstream& file)
 std::string getLineS(std::ifstream& file)
 {
     std::string temp_1 = "";
-    int temp_2 = 0;
     try
     {
         std::getline(file, temp_1);
-        temp_2 = stoi(temp_1);
-        if (!(temp_2 <= 0)) throw  1;
-        else return temp_1;
+	return temp_1;
     }
     catch (const std::exception&)
     {
-        std::cout << "Îøèáêà ïðè ÷òåíèè èíôîðìàöèè èç ôàéëà." << std::endl;
-        throw 1;
-    }
-    catch (int)
-    {
-        std::cout << "Íåêîððåêòíûé ôîðìàò äàííûõ." << std::endl;
+        std::cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¯Ã°Ã¨ Ã·Ã²Ã¥Ã­Ã¨Ã¨ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¨ Ã¨Ã§ Ã´Ã Ã©Ã«Ã ." << std::endl;
         throw 1;
     }
 }
@@ -151,13 +143,13 @@ void checkFileName(std::string str) //bool checkFileName(std::string str, const 
 			std::string temp_st = str.substr(temp_sz);
 			if (temp_st.size() != txt.size())
 			{
-				std::cout << "Íåâåðíûé òèï ôàéëà. Ïîâòîðèòå ââîä." << std::endl;
+				std::cout << "ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã²Ã¨Ã¯ Ã´Ã Ã©Ã«Ã . ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 				throw 1;
 			}
 		}
 		else
 		{
-			std::cout << "Íåâåðíûé òèï ôàéëà. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã²Ã¨Ã¯ Ã´Ã Ã©Ã«Ã . ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			throw 1;
 		}
 
@@ -167,7 +159,7 @@ void checkFileName(std::string str) //bool checkFileName(std::string str, const 
 			std::string temp2 = str;
 			if (temp1 == temp2)
 			{
-				std::cout << "Ââåäåíî çàðåçåðâèðîâàííîå îïåðàöèîííîé ñèñòåìîé Windows ñëîâî. Ïîâòîðèòå ââîä." << std::endl;
+				std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¥Ã­Ã® Ã§Ã Ã°Ã¥Ã§Ã¥Ã°Ã¢Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã®Ã¥ Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã®Ã­Ã­Ã®Ã© Ã±Ã¨Ã±Ã²Ã¥Ã¬Ã®Ã© Windows Ã±Ã«Ã®Ã¢Ã®. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 				throw 1;
 			}
 			else if (temp1.size() == temp2.size())
@@ -176,7 +168,7 @@ void checkFileName(std::string str) //bool checkFileName(std::string str, const 
 				std::transform(temp2.begin(), temp2.end(), temp2.begin(), ::toupper);
 				if (temp1 == temp2)
 				{
-					std::cout << "Ââåäåíî çàðåçåðâèðîâàííîå îïåðàöèîííîé ñèñòåìîé Windows ñëîâî. Ïîâòîðèòå ââîä." << std::endl;
+					std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¥Ã­Ã® Ã§Ã Ã°Ã¥Ã§Ã¥Ã°Ã¢Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã®Ã¥ Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã®Ã­Ã­Ã®Ã© Ã±Ã¨Ã±Ã²Ã¥Ã¬Ã®Ã© Windows Ã±Ã«Ã®Ã¢Ã®. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 					throw 1;
 				}
 			}
@@ -199,17 +191,17 @@ void checkFileExistance(const std::string file_name, const std::string stream_ty
 	{
 		if (stream_type == op)
 		{
-			std::cout << "Ôàéë óæå ñóùåñòâóåò. Âû õîòèòå ïåðåñîçäàòü åãî?" << std::endl
-				<< "0 - Íåò." << std::endl
-				<< "1 - Äà." << std::endl;
-			std::cout << "Ââîä: ";
+			std::cout << "Ã”Ã Ã©Ã« Ã³Ã¦Ã¥ Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¥Ã². Ã‚Ã» ÃµÃ®Ã²Ã¨Ã²Ã¥ Ã¯Ã¥Ã°Ã¥Ã±Ã®Ã§Ã¤Ã Ã²Ã¼ Ã¥Ã£Ã®?" << std::endl
+				<< "0 - ÃÃ¥Ã²." << std::endl
+				<< "1 - Ã„Ã ." << std::endl;
+			std::cout << "Ã‚Ã¢Ã®Ã¤: ";
 			int userChoise = getBinChoice();
 			if (userChoise == !yes) throw 1;
 		}
 	}
 	else if (stream_type == ip)
 	{
-		std::cout << "Ôàéëà ñ òàêèì íàçâàíèåì íå ñóùåñòâóåò. Ïîâòîðèòå ââîä." << std::endl;
+		std::cout << "Ã”Ã Ã©Ã«Ã  Ã± Ã²Ã ÃªÃ¨Ã¬ Ã­Ã Ã§Ã¢Ã Ã­Ã¨Ã¥Ã¬ Ã­Ã¥ Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¥Ã². ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		throw 1;

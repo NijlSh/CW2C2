@@ -2,7 +2,7 @@
 
 void showGreetings(void) 
 {
-	std::cout << "Контрольная работа №2. Шарашидзе Н.Л." << std::endl;
+	std::cout << "Контрольная работа №2" << std::endl;
 }
 
 void showTask(void) 

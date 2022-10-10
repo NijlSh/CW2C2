@@ -11,7 +11,7 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 	{
 		try
 		{
-			std::cout << "¬ведите им€ полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
+			std::cout << "¬ведите полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
 			std::getline(std::cin, file_name);
 			std::cout << std::endl;
 			checkFileName(file_name);
@@ -78,11 +78,10 @@ void fileInput(std::vector<std::shared_ptr<figure>>& shp)
 	{
 		try
 		{
-			std::cout << "¬ведите им€ полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
+			std::cout << "¬ведите полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
 			std::getline(std::cin, file_name);
-			std::cout << std::endl;
 			checkFileName(file_name);
-			checkFileExistance(file_name, op);
+			checkFileExistance(file_name, ip);
 			file.open(file_name);
 			is_stream_opened = true;
 		}

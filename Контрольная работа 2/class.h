@@ -1,10 +1,10 @@
 #pragma once
 
-#define _USE_MATH_DEFINES
-
-#include <math.h>
+#include <cmath>
 #include <iostream>
 #include <string>
+
+const double m_pi = acos(-1);
 
 class figure {
 public:
@@ -16,11 +16,11 @@ public:
 
 class circle : public figure {
 private:
-	const std::string name_ = "ГЄГ°ГіГЈ";
+	const std::string name_ = "круг";
 	double radius_ = 0;
 public:
 	circle() = default;
-	circle(double radius);//ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
+	circle(double radius);
 	void setRadius(double rad);
 	double getRadius();
 	double getSquare() override;
@@ -29,7 +29,7 @@ public:
 };
 class rectangle : public figure {
 private:
-	const std::string name_ = "ГЇГ°ГїГ¬Г®ГіГЈГ®Г«ГјГ­ГЁГЄ";
+	const std::string name_ = "прямоугольник";
 	double width_ = 0.0;
 	double height_ = 0.0;
 public:
@@ -45,7 +45,7 @@ public:
 };
 class trapezoid : public figure {
 private:
-	const std::string name_ = "ГІГ°Г ГЇГҐГ¶ГЁГї";
+	const std::string name_ = "трапеция";
 	double large_base_ = 0.0;
 	double smaller_base_ = 0.0;
 	double right_side_ = 0.0;

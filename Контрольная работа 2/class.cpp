@@ -1,7 +1,3 @@
-#define _USE_MATH_DEFINES
-
-#include <cmath>
-
 #include "class.h"
 
 circle::circle(double radius) :radius_(radius) {}
@@ -18,12 +14,12 @@ double circle::getRadius()
 
 double circle::getSquare()
 {
-	return M_PI * pow(radius_, 2);
+	return m_pi * pow(radius_, 2);
 }
 
 double circle::getPerimeter()
 {
-	return 2 * M_PI * radius_;
+	return 2 * m_pi * radius_;
 }
 
 std::string circle::getName()

@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "CppUnitTest.h"
 #include "..\Контрольная работа 2\class.cpp"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

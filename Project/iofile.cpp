@@ -21,6 +21,7 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 		}
 		catch (const std::exception&) 
 		{
+			std::cout << "Ошибка при попытке открыть файл." << std::endl;
 			continue;
 		}
 		catch (int)
@@ -89,10 +90,6 @@ void fileInput(std::vector<std::shared_ptr<figure>>& shp)
 		{
 			continue;
 		}
-		catch (int)
-		{
-			continue;
-		}
 	} while (!is_stream_opened);
 
 	while (true)
@@ -131,14 +128,13 @@ void fileInput(std::vector<std::shared_ptr<figure>>& shp)
 				else throw 1;
 			}
 		}
+		catch (int)
+		{
+			continue;
+		}
 		catch (const std::exception&) 
 		{
 			std::cout << "Ошибка при чтении информации из файла. Повторите ввод." << std::endl;
-		}
-		catch (int) 
-		{
-			std::cout << "Некоректные данные в файле. Повторите ввод." << std::endl;
-			continue;
 		}
 		break;
 	}

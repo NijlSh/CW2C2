@@ -126,7 +126,7 @@ int getLineI(std::ifstream& file)
     }
 	catch (int) 
 	{
-		std::cout << "Не верный тип данных." << std::endl;
+		std::cout << "Некорректный формат данных." << std::endl;
 		throw error;
 	}
 }
@@ -217,14 +217,16 @@ void checkFileName(std::string str)
 
 	catch (std::exception&)
 	{
-		std::cout << "Unexpexted error" << std::endl;
+		std::cout << "Ошибка." << std::endl;
 		throw 1;
 	}
 	catch (int)
 	{
+		std::cout << "Ошибка." << std::endl;
 		throw 1;
 	}
 }
+
 void checkFileExistance(const std::string file_name, const std::string stream_type) 
 {
 	if (std::ifstream(file_name))

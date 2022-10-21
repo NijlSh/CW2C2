@@ -7,6 +7,7 @@
 
 #include "algorithm.h"
 #include "check.h"
+#include "GetFileName.h"
 
 void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter);
 void fileInput(std::vector<std::shared_ptr<figure>>& shp);

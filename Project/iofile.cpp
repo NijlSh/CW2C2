@@ -11,11 +11,12 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 	{
 		try
 		{
-			std::cout << "¬ведите полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
-			std::getline(std::cin, file_name);
-			std::cout << std::endl;
-			checkFileName(file_name);
-			checkFileExistance(file_name, op);
+			//std::cout << "¬ведите полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
+			//std::getline(std::cin, file_name);
+			//std::cout << std::endl;
+			//checkFileName(file_name);
+			//checkFileExistance(file_name, op);
+			file_name = GetFileName(output);
 			file.open(file_name);
 			is_stream_opened = true;
 		}
@@ -24,10 +25,10 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 			std::cout << "ќшибка при попытке открыть файл." << std::endl;
 			continue;
 		}
-		catch (int)
-		{
-			continue;
-		}
+		//catch (int)
+		//{
+		//	continue;
+		//}
 	} while (!is_stream_opened);
 	while (true)
 	{
@@ -79,10 +80,11 @@ void fileInput(std::vector<std::shared_ptr<figure>>& shp)
 	{
 		try
 		{
-			std::cout << "¬ведите полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
-			std::getline(std::cin, file_name);
-			checkFileName(file_name);
-			checkFileExistance(file_name, ip);
+			//std::cout << "¬ведите полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
+			//std::getline(std::cin, file_name);
+			//checkFileName(file_name);
+			//checkFileExistance(file_name, ip);
+			file_name = GetFileName(input);
 			file.open(file_name);
 			is_stream_opened = true;
 		}
@@ -152,11 +154,12 @@ void fileOutputFin(std::vector<std::shared_ptr<figure>>& shp)
 	{
 		try
 		{
-			std::cout << "¬ведите им€ полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
-			std::getline(std::cin, file_name);
-			std::cout << std::endl;
-			checkFileName(file_name);
-			checkFileExistance(file_name, op);
+			//std::cout << "¬ведите им€ полное им€ файла (название и тип, пример: название.txt) или путь до него: ";
+			//std::getline(std::cin, file_name);
+			//std::cout << std::endl;
+			//checkFileName(file_name);
+			//checkFileExistance(file_name, op);
+			file_name = GetFileName(output);
 			file.open(file_name);
 			is_stream_opened = true;
 		}
@@ -164,10 +167,10 @@ void fileOutputFin(std::vector<std::shared_ptr<figure>>& shp)
 		{
 			continue;
 		}
-		catch (int)
-		{
-			continue;
-		}
+		//catch (int)
+		//{
+		//	continue;
+		//}
 	} while (!is_stream_opened);
 
 	while (true)

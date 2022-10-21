@@ -126,6 +126,7 @@
     <ClCompile Include="algorithm.cpp" />
     <ClCompile Include="check.cpp" />
     <ClCompile Include="class.cpp" />
+    <ClCompile Include="GetFileName.cpp" />
     <ClCompile Include="interface.cpp" />
     <ClCompile Include="iofile.cpp" />
     <ClCompile Include="main.cpp" />
@@ -135,6 +136,7 @@
     <ClInclude Include="algorithm.h" />
     <ClInclude Include="check.h" />
     <ClInclude Include="class.h" />
+    <ClInclude Include="GetFileName.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="iofile.h" />
     <ClInclude Include="program.h" />

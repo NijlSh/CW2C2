@@ -6,21 +6,22 @@
 #include <algorithm>
 
 #undef max
-#define WIN_NAME_SIZE 22
+//#define WIN_NAME_SIZE 22
 #define QUIT 0
 
 enum binChoise { no = 0, yes = 1 };
 enum startChoise { file = 1, console = 2 };
 enum figureChoise { _circle = 1, _rectangle = 2, _trapezoid = 3 };
 
-const std::string op = "output";
-const std::string ip = "input";
-const std::string txt = ".txt";
-const std::string win_name[WIN_NAME_SIZE] = { "CON", "PRN", "AUX", "NUL",
-								"COM1", "COM2", "COM3", "COM4", "COM5",
-								"COM6", "COM7", "COM8", "COM9", "LPT1",
-								"LPT2", "LPT3", "LPT4", "LPT5", "LPT6",
-								"LPT7", "LPT8", "LPT9" };
+//const std::string op = "output";
+//const std::string ip = "input";
+//const std::string txt = ".txt";
+//const std::string win_name[WIN_NAME_SIZE] = { "CON", "PRN", "AUX", "NUL",
+//								"COM1", "COM2", "COM3", "COM4", "COM5",
+//								"COM6", "COM7", "COM8", "COM9", "LPT1",
+//								"LPT2", "LPT3", "LPT4", "LPT5", "LPT6",
+//								"LPT7", "LPT8", "LPT9" };
+
 const int quit = 0;
 const int error = 1;
 
@@ -65,5 +66,5 @@ T getPositiveValue()
     } while (true);
 }
 
-void checkFileName(std::string str);
-void checkFileExistance(std::string file_name, const std::string stream_type);
+//void checkFileName(std::string str);
+//void checkFileExistance(std::string file_name, const std::string stream_type);

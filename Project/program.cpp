@@ -15,7 +15,8 @@ int program(void)
 		int user_choice = yes, counter = 0;
 		bool is_con_input = false;
 		std::vector<std::shared_ptr<figure>> shp;
-		while (user_choice == yes) {
+		while (user_choice == yes) 
+		{
 			shp.clear();
 			shp.resize(0);
 			showInputChoice();
@@ -35,11 +36,15 @@ int program(void)
 						user_choice = yes;
 						break;
 					}
-					showContMenu();
+					showNextFigureMenu();
 					user_choice = getBinChoice();
 				} while (user_choice != quit);
 			}
-			else fileInput(shp);
+			else 
+			{ 
+				fileInput(shp); 
+				user_choice = no;
+			}
 		}
 
 		if (is_con_input) 
@@ -51,7 +56,7 @@ int program(void)
 
 		showResult(shp);
 
-		showFinOutputMenu();
+		showFinalOutputMenu();
 		user_choice = getBinChoice();
 		if(user_choice == yes) fileOutputFin(shp);
 

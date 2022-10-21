@@ -7,6 +7,6 @@ void showTask();
 void showInputChoice();
 void showFigureMenu();
 void showOutputMenu();
-void showContMenu();
-void showFinOutputMenu();
+void showNextFigureMenu();
+void showFinalOutputMenu();
 void showEndMenu();

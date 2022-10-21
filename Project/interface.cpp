@@ -39,7 +39,7 @@ void showOutputMenu(void)
 	std::cout << "Ввод: ";
 }
 
-void showContMenu(void) 
+void showNextFigureMenu(void)
 {
 	std::cout << "Хотите ввести новую фигуру?" << std::endl;
 	std::cout << "0 - Нет" << std::endl;
@@ -47,7 +47,7 @@ void showContMenu(void)
 	std::cout << "Ввод: ";
 }
 
-void showFinOutputMenu(void)
+void showFinalOutputMenu(void)
 {
 	std::cout << "Хотите записать данные в красиво офрмленном виде в новый файл" << std::endl;
 	std::cout << "0 - Нет" << std::endl;

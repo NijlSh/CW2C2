@@ -1,13 +1,7 @@
-﻿  check.cpp
-c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\algorithm(1443): warning C4244: =: преобразование "int" в "char", возможна потеря данных
-  c:\users\libro\onedrive\рабочий стол\project\project\check.cpp(207): note: выполняется компиляция ссылки на экземпляр шаблон функции "_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Ty>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Ty>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)"
-          with
-          [
-              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
-              _Ty=char,
-              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
-              _Fn=int (__cdecl *)(int)
-          ]
+﻿  algorithm.cpp
+  interface.cpp
   iofile.cpp
+  main.cpp
+  program.cpp
   Создание кода...
-  Project.vcxproj -> C:\Users\Libro\OneDrive\Рабочий стол\Project\Debug\Project.exe
+  Project.vcxproj -> C:\Users\Libro\OneDrive\Рабочий стол\Project 2\Debug\Project.exe

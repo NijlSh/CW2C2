@@ -172,7 +172,7 @@ std::string getLineS(std::ifstream& file)
     }
 }
 
-void checkFileName(std::string str)
+/*void checkFileName(std::string str)
 {
 	std::cout << std::endl;
 	try 
@@ -246,4 +246,4 @@ void checkFileExistance(const std::string file_name, const std::string stream_ty
 		std::cout << "Файла с таким названием не существует. Потворите ввод." << std::endl;
 		throw 1;
 	}
-}
+}*/

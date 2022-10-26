@@ -1,7 +1,9 @@
 ﻿  algorithm.cpp
-  interface.cpp
   iofile.cpp
   main.cpp
   program.cpp
   Создание кода...
+c:\users\libro\onedrive\рабочий стол\project 2\project\program.cpp(51): warning C4702: недостижимый код
+c:\users\libro\onedrive\рабочий стол\project 2\project\program.cpp(63): warning C4702: недостижимый код
+c:\users\libro\onedrive\рабочий стол\project 2\project\program.cpp(69): warning C4702: недостижимый код
   Project.vcxproj -> C:\Users\Libro\OneDrive\Рабочий стол\Project 2\Debug\Project.exe

@@ -33,7 +33,7 @@ void trapezoidChoice(std::vector<std::shared_ptr<figure>>& shp)
 		if (!(temp->checkTrapezoid(temp->getLargeBase(), temp->getLeftSide(), temp->getRightSide(), temp->getSmallerBase())))
 		{
 			std::cout << "¬ведены некорректные данные: ";
-			temp->getSmallerBase() > temp->getLargeBase() 
+			temp->getSmallerBase() >= temp->getLargeBase() 
 				? std::cout << "меньшее основание больше большего основани€." << std::endl 
 				: std::cout << "длина одной из сторон больше суммы длин остальных сторон." << std::endl;
 			continue;

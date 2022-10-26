@@ -1,5 +1,7 @@
 #pragma once
 
+#define no_init_all
+
 #include <windows.h>
 
 #include <vector>

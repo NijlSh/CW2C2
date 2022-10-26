@@ -75,9 +75,10 @@ trapezoid::trapezoid(double largeBase, double smallerBase, double rightSide, dou
 bool trapezoid::checkTrapezoid(double lb, double ls, double rs, double sb)
 {
 	double side[4] = { lb, ls, rs, sb };
-	double sum = 0.0f;
+	double sum = 0.0;
 
-	for (int i = 0; i < 4; i++) sum += side[i];
+	for (int i = 0; i < 4; i++) 
+		sum += side[i];
 	 
 	for (int i = 0; i < 4; i++) if (side[i] >= sum - side[i]) return false;
 

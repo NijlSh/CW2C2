@@ -5,15 +5,10 @@ bool IsValidName(std::string name)
 	std::cout << std::endl;
 	try
 	{
-		if (!(name.find(".txt") == std::string::npos))
+		if (name.find(".txt") >= std::string::npos)
 		{
-			std::size_t temp_sz = name.find(".txt");
-			std::string temp_st = name.substr(temp_sz);
-			if (temp_st.size() != 4)
-			{
-				std::cout << "Неверный тип файла. Повторите ввод." << std::endl;
-				return false;
-			}
+			std::cout << "Неверный тип файла. Повторите ввод." << std::endl;
+			return false;
 		}
 
 		std::string temp1 = "", temp2 = name;
@@ -22,7 +17,10 @@ bool IsValidName(std::string name)
 			temp1 = win_name[i] + ".TXT";
 			if (temp1.size() == temp2.size()) 
 			{
-				std::transform(temp2.begin(), temp2.end(), temp2.begin(), ::toupper);
+				for (int j = 0; temp1[j]; j++)
+				{
+					temp1[j] = static_cast<char>(toupper(temp1[j]));
+				}
 				if (temp1 == temp2)
 				{
 					std::cout << "Введено зарезервированное операционной системой Windows слово. Повторите ввод." << std::endl;

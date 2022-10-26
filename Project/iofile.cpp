@@ -1,6 +1,6 @@
 #include "iofile.h"
 
-void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter) 
+bool fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter) 
 {
 	std::ofstream file;
 	file.exceptions(std::ofstream::badbit | std::ofstream::failbit);
@@ -11,11 +11,6 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 	{
 		try
 		{
-			//std::cout << "Введите полное имя файла (название и тип, пример: название.txt) или путь до него: ";
-			//std::getline(std::cin, file_name);
-			//std::cout << std::endl;
-			//checkFileName(file_name);
-			//checkFileExistance(file_name, op);
 			file_name = GetFileName(output);
 			file.open(file_name);
 			is_stream_opened = true;
@@ -25,11 +20,8 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 			std::cout << "Ошибка при попытке открыть файл." << std::endl;
 			continue;
 		}
-		//catch (int)
-		//{
-		//	continue;
-		//}
 	} while (!is_stream_opened);
+
 	while (true)
 	{
 
@@ -57,19 +49,20 @@ void fileOutput(std::vector<std::shared_ptr<figure>>& shp, int counter)
 				}
 
 			}
+			std::cout << "Данные успешно сохранены." << std::endl;
 			file.close();
+			return false;
 		}
 		catch (const std::exception&) 
 		{
-			std::cout << "Ошибка при записи информации в файл. Повторите ввод." << std::endl;
-			continue;
+			std::cout << "Ошибка при записи информации в файл." << std::endl;
+			file.close();
+			return true;
 		}
-		std::cout << "Данные успешно сохранены." << std::endl;
-		break;
 	}
 }
 
-void fileInput(std::vector<std::shared_ptr<figure>>& shp) 
+bool fileInput(std::vector<std::shared_ptr<figure>>& shp) 
 {
 	std::ifstream file;
 	file.exceptions(std::istream::badbit | std::ifstream::failbit);
@@ -80,16 +73,13 @@ void fileInput(std::vector<std::shared_ptr<figure>>& shp)
 	{
 		try
 		{
-			//std::cout << "Введите полное имя файла (название и тип, пример: название.txt) или путь до него: ";
-			//std::getline(std::cin, file_name);
-			//checkFileName(file_name);
-			//checkFileExistance(file_name, ip);
 			file_name = GetFileName(input);
 			file.open(file_name);
 			is_stream_opened = true;
 		}
 		catch (const std::exception&)
 		{
+			std::cout << "Ошибка при попытке открыть файл." << std::endl;
 			continue;
 		}
 	} while (!is_stream_opened);
@@ -129,20 +119,25 @@ void fileInput(std::vector<std::shared_ptr<figure>>& shp)
 				}
 				else throw 1;
 			}
+			file.close();
+			return false;
 		}
 		catch (int)
 		{
-			continue;
+			std::cout << "Ошибка при чтении информации из файла." << std::endl;
+			file.close();
+			return true;
 		}
 		catch (const std::exception&) 
 		{
-			std::cout << "Ошибка при чтении информации из файла. Повторите ввод." << std::endl;
+			std::cout << "Ошибка при чтении информации из файла." << std::endl;
+			file.close();
+			return true;
 		}
-		break;
 	}
 }
 
-void fileOutputFin(std::vector<std::shared_ptr<figure>>& shp)
+bool fileOutputFin(std::vector<std::shared_ptr<figure>>& shp)
 {
 	int index = 1;
 	std::ofstream  file;
@@ -154,23 +149,15 @@ void fileOutputFin(std::vector<std::shared_ptr<figure>>& shp)
 	{
 		try
 		{
-			//std::cout << "Введите имя полное имя файла (название и тип, пример: название.txt) или путь до него: ";
-			//std::getline(std::cin, file_name);
-			//std::cout << std::endl;
-			//checkFileName(file_name);
-			//checkFileExistance(file_name, op);
 			file_name = GetFileName(output);
 			file.open(file_name);
 			is_stream_opened = true;
 		}
 		catch (const std::exception&)
 		{
+			std::cout << "Ошибка при попытке открыть файл." << std::endl;
 			continue;
 		}
-		//catch (int)
-		//{
-		//	continue;
-		//}
 	} while (!is_stream_opened);
 
 	while (true)
@@ -188,11 +175,19 @@ void fileOutputFin(std::vector<std::shared_ptr<figure>>& shp)
 			std::cout << "Данные успешно записаны." << std::endl;
 
 			file.close();
-			break;
+			return false;
+		}
+		catch (int) 
+		{
+			std::cout << "Ошибка при записи информации в файл." << std::endl;
+			file.close();
+			return true;
 		}
 		catch (const std::exception&)
 		{
 			std::cout << "Ошибка при записи информации в файл." << std::endl;
+			file.close();
+			return true;
 		}
 	}
 }

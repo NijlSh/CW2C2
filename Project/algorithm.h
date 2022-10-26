@@ -9,8 +9,6 @@
 #include "iofile.h"
 #include "check.h"
 
-
-
 void circleChoice(std::vector<std::shared_ptr<figure>>& shp);
 void rectangleChoice(std::vector<std::shared_ptr<figure>>& shp);
 void trapezoidChoice(std::vector<std::shared_ptr<figure>>& shp);

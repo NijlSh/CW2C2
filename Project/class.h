@@ -25,7 +25,7 @@ public:
 	double getRadius();
 	double getSquare() override;
 	double getPerimeter() override;
-	std::string getName()override;
+	std::string getName() override;
 };
 class rectangle : public figure {
 private:
@@ -41,7 +41,7 @@ public:
 	double getHeight();
 	double  getSquare() override;
 	double getPerimeter() override;
-	std::string getName()override;
+	std::string getName() override;
 };
 class trapezoid : public figure {
 private:
@@ -65,5 +65,5 @@ public:
 	double getLeftSide();
 	double getSquare() override;
 	double getPerimeter() override;
-	std::string getName()override;
+	std::string getName() override;
 };

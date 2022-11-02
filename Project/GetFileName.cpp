@@ -7,7 +7,7 @@ bool IsValidName(std::string name)
 	{
 		if (name.find(".txt") >= std::string::npos)
 		{
-			std::cout << "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ñ‚Ğ¸Ğ¿ Ñ„Ğ°Ğ¹Ğ»Ğ°. ĞŸĞ¾Ğ²Ñ‚Ğ¾Ñ€Ğ¸Ñ‚Ğµ Ğ²Ğ²Ğ¾Ğ´." << std::endl;
+			std::cout << "Íåâåğíûé òèï ôàéëà. Ïîâòîğèòå ââîä." << std::endl;
 			return false;
 		}
 
@@ -23,7 +23,7 @@ bool IsValidName(std::string name)
 				}
 				if (temp1 == temp2)
 				{
-					std::cout << "Ğ’Ğ²ĞµĞ´ĞµĞ½Ğ¾ Ğ·Ğ°Ñ€ĞµĞ·ĞµÑ€Ğ²Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ½Ğ¾Ğµ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¾Ğ½Ğ½Ğ¾Ğ¹ ÑĞ¸ÑÑ‚ĞµĞ¼Ğ¾Ğ¹ Windows ÑĞ»Ğ¾Ğ²Ğ¾. ĞŸĞ¾Ğ²Ñ‚Ğ¾Ñ€Ğ¸Ñ‚Ğµ Ğ²Ğ²Ğ¾Ğ´." << std::endl;
+					std::cout << "Ââåäåíî çàğåçåğâèğîâàííîå îïåğàöèîííîé ñèñòåìîé Windows ñëîâî. Ïîâòîğèòå ââîä." << std::endl;
 					return false;
 				}
 			}
@@ -34,7 +34,7 @@ bool IsValidName(std::string name)
 
 	catch (std::exception&)
 	{
-		std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
+		std::cout << "Îøèáêà." << std::endl;
 		return false;
 	}
 }
@@ -48,50 +48,51 @@ bool IsCanOpenFile(const std::string file_name, const int stream_type)
 		{
 			if (stream_type == output)
 			{
-				std::cout << "Ğ¤Ğ°Ğ¹Ğ» ÑƒĞ¶Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚. Ğ’Ñ‹ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ Ğ¿ĞµÑ€ĞµÑĞ¾Ğ·Ğ´Ğ°Ñ‚ÑŒ ĞµĞ³Ğ¾?" << std::endl
-					<< "1 - ĞĞµÑ‚." << std::endl
-					<< "2 - Ğ”Ğ°." << std::endl;
-				int user_choice = CheckMenu(2);
+				std::cout << "Ôàéë óæå ñóùåñòâóåò. Âû õîòèòå ïåğåñîçäàòü åãî?" << std::endl
+					<< "1 - Íåò." << std::endl
+					<< "2 - Äà." << std::endl;
+				int user_choice = getBinChoice();
 				if (user_choice != this_file)
 					return false;
 			}
 		}
 		else if (stream_type == input)
 		{
-			std::cout << "Ğ¤Ğ°Ğ¹Ğ»Ğ° Ñ Ñ‚Ğ°ĞºĞ¸Ğ¼ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸ĞµĞ¼ Ğ½Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚. ĞŸĞ¾Ñ‚Ğ²Ğ¾Ñ€Ğ¸Ñ‚Ğµ Ğ²Ğ²Ğ¾Ğ´." << std::endl;
+			std::cout << "Ôàéëà ñ òàêèì íàçâàíèåì íå ñóùåñòâóåò. Ïîòâîğèòå ââîä." << std::endl;
 			return false;
 		}
 		return true;
 	}
 	catch (std::exception&) 
 	{
-		std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
+		std::cout << "Îøèáêà." << std::endl;
 		return false;
 	}
 }
 
 std::string GetFileName(int stream_type)
 {
-	std::string name; //ĞĞ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ñ„Ğ°Ğ¹Ğ»Ğ°
+	std::string name; //Íàçâàíèå ôàéëà
 
 	while (true)
 	{
-		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ñ„Ğ°Ğ¹Ğ»Ğ° Ğ¸Ğ»Ğ¸ Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğ¹ Ğ¿ÑƒÑ‚ÑŒ Ğ´Ğ¾ Ğ½ĞµĞ³Ğ¾." << std::endl << "Ğ’Ğ²Ğ¾Ğ´: "; 
-		std::getline(std::cin, name); //Ğ’Ğ²Ğ¾Ğ´ 
+		std::cout << "Ââåäèòå íàçâàíèå ôàéëà èëè ïîëíûé ïóòü äî íåãî." << std::endl << "Ââîä: "; 
+		std::getline(std::cin, name); //Ââîä 
 
-		if (!IsValidName(name)) //Ğ•ÑĞ»Ğ¸ Ğ²Ğ²ĞµĞ´Ñ‘Ğ½Ğ½Ğ¾Ğµ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ½ĞµĞ´Ğ¾ÑÑ‚ÑƒĞ¿Ğ½Ğ¾
+		if (!IsValidName(name)) //Åñëè ââåä¸ííîå íàçâàíèå íåäîñòóïíî
 		{
-			std::cin.sync(); //ĞÑ‡Ğ¸ÑÑ‚Ğ¸Ñ‚ÑŒ Ğ¿Ğ¾Ñ‚Ğ¾Ğº cin
-			continue; //Ğ£Ğ¹Ñ‚Ğ¸ Ğ½Ğ° Ğ½Ğ¾Ğ²Ñ‹Ğ¹ Ñ†Ğ¸ĞºĞ»
+			std::cin.sync(); //Î÷èñòèòü ïîòîê cin
+			continue; //Óéòè íà íîâûé öèêë
 		}
 		try
 		{
-			if (IsCanOpenFile(name, stream_type)) //Ğ•ÑĞ»Ğ¸ Ğ¼Ğ¾Ğ¶Ğ½Ğ¾ Ğ¾Ñ‚ĞºÑ€Ñ‹Ğ²Ğ°Ñ‚ÑŒ Ñ„Ğ°Ğ¹Ğ»
-				return name; //Ğ’ĞµÑ€Ğ½ÑƒÑ‚ÑŒ Ğ¸Ğ¼Ñ
+			if (IsCanOpenFile(name, stream_type)) //Åñëè ìîæíî îòêğûâàòü ôàéë
+				return name; //Âåğíóòü èìÿ
 		}
 		catch (const std::exception&)
 		{
-			std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
+			std::cout << "Îøèáêà." << std::endl;
 		}
 	}
 }
+

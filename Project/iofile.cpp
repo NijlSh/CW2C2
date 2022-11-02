@@ -113,7 +113,7 @@ bool fileInput(std::vector<std::shared_ptr<figure>>& shp)
 					t_ptr->setLeftSide(getLineD(file));
 					t_ptr->setRightSide(getLineD(file));
 					t_ptr->setSmallerBase(getLineD(file));
-					if (! (t_ptr->checkTrapezoid(t_ptr->getLargeBase, t_ptr->getLeftSide, t_ptr->getRightSide, t_ptr->getSmallerBase))) throw 1;
+					if (!(t_ptr->checkTrapezoid(t_ptr->getLargeBase(), t_ptr->getLeftSide(), t_ptr->getRightSide(), t_ptr->getSmallerBase()))) throw 1;
 
 					shp.push_back(t_ptr);
 				}

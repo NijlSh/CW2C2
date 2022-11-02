@@ -82,7 +82,7 @@ bool trapezoid::checkTrapezoid(double lb, double ls, double rs, double sb)
 	 
 	for (int i = 0; i < 4; i++) if (side[i] >= sum - side[i]) return false;
 
-	if (fabs(lb - sb) <= 0) return false;
+	if (lb - sb <= 0) return false;
 
 	return true;
 }

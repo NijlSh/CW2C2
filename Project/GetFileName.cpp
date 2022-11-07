@@ -1,98 +1,86 @@
 #include "GetFileName.h"
 
-bool IsValidName(std::string name)
+std::string FileInput()
 {
-	std::cout << std::endl;
-	try
+	std::error_code ec;
+	while (true)
 	{
-		if (name.find(".txt") >= std::string::npos)
+		std::string file_path;
+
+		std::cout << "Сохранить в:" << std::endl;
+		getline(std::cin, file_path);
+
+		if (!is_regular_file(file_path, ec))
 		{
-			std::cout << "Неверный тип файла. Повторите ввод." << std::endl;
-			return false;
+			std::cout << "Адрес содержит недопустимые значения. Повторите ввод." << std::endl;
+			continue;
 		}
-
-		std::string temp1 = "", temp2 = name;
-		for (int i = 0; i < WIN_NAME_SIZE; i++)
-		{
-			temp1 = win_name[i] + ".TXT";
-			if (temp1.size() == temp2.size())
-			{
-				for (int j = 0; temp2[j]; j++)
-				{
-					temp2[j] = static_cast<char>(toupper(temp2[j]));
-				}
-				if (temp1 == temp2)
-				{
-					std::cout << "Введено зарезервированное операционной системой Windows слово. Повторите ввод." << std::endl;
-					return false;
-				}
-			}
+		if (!std::ifstream(file_path)) {
+			std::cout << "Файл не существует. Повторите ввод." << std::endl;
+			continue;
 		}
-
-		return true;
-	}
-
-	catch (std::exception&)
-	{
-		std::cout << "Ошибка." << std::endl;
-		return false;
+		std::ifstream myFile(file_path);
+		if (!myFile) {
+			std::cout << "Загрузка запрещена. Повторите ввод." << std::endl;
+			myFile.close();
+			continue;
+		}
+		myFile.close();
+		return file_path;
 	}
 }
 
-bool IsCanOpenFile(const std::string file_name, const int stream_type)
+std::string FileOutput()
 {
-	const int this_file = 2;
+	std::error_code ec;
+	const int get_name = 2;
 
-	try {
-		if (std::ifstream(file_name))
+	while (true)
+	{
+		std::string file_path;
+
+		std::cout << "Сохранить в:" << std::endl;
+		getline(std::cin, file_path);
+
+		if (!is_regular_file(file_path, ec))
 		{
-			if (stream_type == output)
+			std::cout << "Адрес содержит недопустимые значения. Повторите ввод." << std::endl;
+			continue;
+		}
+		if (std::ifstream(file_path))
+		{
+			std::cout << "Файл уже существует." << std::endl;
+			std::cout << "[1] - Перезаписать существующий файл." << std::endl;
+			std::cout << "[2] - Повторить ввод." << std::endl;
+			int tryAnotherFile = CheckMenu(2);
+			if (tryAnotherFile == get_name)
 			{
-				std::cout << "Файл уже существует. Вы хотите пересоздать его?" << std::endl
-					<< "1 - Нет." << std::endl
-					<< "2 - Да." << std::endl;
-				int user_choice = getBinChoice();
-				if (user_choice != this_file)
-					return false;
+				continue;
 			}
 		}
-		else if (stream_type == input)
+		std::ofstream myFile(file_path, std::ofstream::app);
+		if (!myFile)
 		{
-			std::cout << "Файла с таким названием не существует. Потворите ввод." << std::endl;
-			return false;
+			std::cout << "Запись запрещена. Повторите ввод." << std::endl;
+			myFile.close();
+			continue;
 		}
-		return true;
-	}
-	catch (std::exception&) 
-	{
-		std::cout << "Ошибка." << std::endl;
-		return false;
+		myFile.close();
+		return file_path;
 	}
 }
 
 std::string GetFileName(int stream_type)
 {
-	std::string name; //Название файла
+	while (true) {
+		std::string file_path;
 
-	while (true)
-	{
-		std::cout << "Введите название файла или полный путь до него." << std::endl << "Ввод: "; 
-		std::getline(std::cin, name); //Ввод 
-
-		if (!IsValidName(name)) //Если введённое название недоступно
+		switch (stream_type)
 		{
-			std::cin.sync(); //Очистить поток cin
-			continue; //Уйти на новый цикл
-		}
-		try
-		{
-			if (IsCanOpenFile(name, stream_type)) //Если можно открывать файл
-				return name; //Вернуть имя
-		}
-		catch (const std::exception&)
-		{
-			std::cout << "Ошибка." << std::endl;
+		case input:
+			return file_path = FileInput();
+		case output:
+			return file_path = FileOutput();
 		}
 	}
 }
-

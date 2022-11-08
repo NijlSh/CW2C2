@@ -6,30 +6,30 @@ std::string FileInput()
 	{
 		std::string file_path;
 
-		std::cout << "Ââîä: ";
+		std::cout << "Ã‚Ã¢Ã®Ã¤: ";
 		getline(std::cin, file_path);
 
 		if (file_path.find(".txt") >= std::string::npos)
 		{
-			std::cout << "Íå òåêñòîâûé ôàéë. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "ÃÃ¥ Ã²Ã¥ÃªÃ±Ã²Ã®Ã¢Ã»Ã© Ã´Ã Ã©Ã«. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			return false;
 		}
 
 		if (!std::ifstream(file_path)) {
-			std::cout << "Ôàéë íå ñóùåñòâóåò. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "Ã”Ã Ã©Ã« Ã­Ã¥ Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¥Ã². ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			continue;
 		}
 
 		std::error_code ec;
 		if (!is_regular_file(file_path, ec))
 		{
-			std::cout << "Àäðåñ ñîäåðæèò íåäîïóñòèìûå çíà÷åíèÿ. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "Ã€Ã¤Ã°Ã¥Ã± Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã² Ã­Ã¥Ã¤Ã®Ã¯Ã³Ã±Ã²Ã¨Ã¬Ã»Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			continue;
 		}
 
 		std::ifstream myFile(file_path);
 		if (!myFile) {
-			std::cout << "Çàãðóçêà çàïðåùåíà. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "Ã‡Ã Ã£Ã°Ã³Ã§ÃªÃ  Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã . ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			myFile.close();
 			continue;
 		}
@@ -46,21 +46,21 @@ std::string FileOutput()
 	{
 		std::string file_path;
 
-		std::cout << "Ñîõðàíèòü èç: ";
+		std::cout << "Ã‘Ã®ÃµÃ°Ã Ã­Ã¨Ã²Ã¼ Ã¨Ã§: ";
 		getline(std::cin, file_path);
 
 		if (file_path.find(".txt") >= std::string::npos) 
 		{
-			std::cout << "Íå òåêñòîâûé ôàéë. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "ÃÃ¥ Ã²Ã¥ÃªÃ±Ã²Ã®Ã¢Ã»Ã© Ã´Ã Ã©Ã«. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			return false;
 		}
 
 		if (std::ifstream(file_path))
 		{
-			std::cout << "Ôàéë óæå ñóùåñòâóåò." << std::endl;
-			std::cout << "[1] - Ïåðåçàïèñàòü ñóùåñòâóþùèé ôàéë." << std::endl;
-			std::cout << "[2] - Ïîâòîðèòü ââîä." << std::endl;
-			int tryAnotherFile = CheckMenu(2);
+			std::cout << "Ã”Ã Ã©Ã« Ã³Ã¦Ã¥ Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¥Ã²." << std::endl;
+			std::cout << "[1] - ÃÃ¥Ã°Ã¥Ã§Ã Ã¯Ã¨Ã±Ã Ã²Ã¼ Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã© Ã´Ã Ã©Ã«." << std::endl;
+			std::cout << "[2] - ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¼ Ã¢Ã¢Ã®Ã¤." << std::endl;
+			int tryAnotherFile = getBinChoice();
 			if (tryAnotherFile == get_name)
 			{
 				continue;
@@ -72,12 +72,12 @@ std::string FileOutput()
 		std::error_code ec;
 		if (!is_regular_file(file_path, ec))
 		{
-			std::cout << "Àäðåñ ñîäåðæèò íåäîïóñòèìûå çíà÷åíèÿ. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "Ã€Ã¤Ã°Ã¥Ã± Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã² Ã­Ã¥Ã¤Ã®Ã¯Ã³Ã±Ã²Ã¨Ã¬Ã»Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			continue;
 		}
 		if (!myFile)
 		{
-			std::cout << "Çàïèñü çàïðåùåíà. Ïîâòîðèòå ââîä." << std::endl;
+			std::cout << "Ã‡Ã Ã¯Ã¨Ã±Ã¼ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã . ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤." << std::endl;
 			myFile.close();
 			continue;
 		}

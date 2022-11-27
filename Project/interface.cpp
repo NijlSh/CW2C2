@@ -49,7 +49,7 @@ void showNextFigureMenu(void)
 
 void showFinalOutputMenu(void)
 {
-	std::cout << "Хотите записать данные в красиво офрмленном виде в новый файл" << std::endl;
+	std::cout << "Хотите записать результат работы программы в файл?" << std::endl;
 	std::cout << "0 - Нет" << std::endl;
 	std::cout << "1 - Да" << std::endl;
 	std::cout << "Ввод: ";

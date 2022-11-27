@@ -15,6 +15,7 @@ int program(void)
 		int user_choice = yes, counter = 0;
 		bool is_con_input = false;
 		bool is_error = false;
+
 		std::vector<std::shared_ptr<figure>> shp;
 		while (user_choice == yes) 
 		{
@@ -48,7 +49,8 @@ int program(void)
 			}
 		}
 
-		if (is_error) { continue; std::cout << std::endl; }
+		if (is_error) 
+			continue;
 
 		showResult(shp);
 
@@ -60,13 +62,15 @@ int program(void)
 				is_error = fileOutput(shp, counter); 
 		}
 
-		if (is_error) { continue; std::cout << std::endl; }
+		if (is_error)
+			continue;
 
 		showFinalOutputMenu();
 		user_choice = getBinChoice();
 		if(user_choice == yes) is_error = fileOutputFin(shp);
 
-		if (is_error) { continue; std::cout << std::endl; }
+		if (is_error) 
+			continue;
 
 		showEndMenu();
 		user_choice = getBinChoice();
